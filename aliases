@@ -1,0 +1,10 @@
+# Quick building for py
+alias mpy="cd /host/sDDF/echo_server/micropython/ports/imx8mm-sel4cp/; make CROSS=1 -j5"
+
+# Quick building for sddf
+alias msddf="cd /host/sDDF/echo_server/; make BUILD_DIR=./build SEL4CP_SDK=/host/sel4cp/release/sel4cp-sdk-1.2.6 SEL4CP_BOARD=imx8mm SEL4CP_CONFIG=debug -j5"
+
+export PATH="/usr/local/musl/bin:$PATH"
+
+# Setup aarch64-none-elf
+export PATH="/host/extras/install-lnx/gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf/bin:$PATH"
