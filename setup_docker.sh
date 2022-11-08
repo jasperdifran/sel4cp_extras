@@ -16,11 +16,3 @@ cd /host/extras/musl-1.2.2
 make
 sudo make install
 cd /host/sDDF/echo_server
-
-# Setup libnfs
-cd /host/sDDF/libnfs 
-./bootstrap
-./configure
-make
-sudo make install
-
