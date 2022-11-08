@@ -5,7 +5,19 @@ alias mpy="cd /host/sDDF/echo_server/micropython/ports/imx8mm-sel4cp/; make CROS
 alias msddf="cd /host/sDDF/echo_server/; make BUILD_DIR=./build SEL4CP_SDK=/host/sel4cp/release/sel4cp-sdk-1.2.6 SEL4CP_BOARD=imx8mm SEL4CP_CONFIG=debug -j5"
 
 # Quick building for musl
-alias mmusl="cd /host/sDDF/echo_server/musl; rm -rf build lib obj; ./configure --prefix=build CROSS_COMPILE=aarch64-none-elf- --target=aarch64 CC=aarch64-none-elf-gcc; make -j10; make install"
+alias mmusl="
+    cd /host/sDDF/echo_server/musl; \
+    rm -rf build lib obj; \
+    ./configure \
+        --prefix=build \
+        --disable-shared \
+        --enable-static \
+        --enable-warnings \
+        --target=aarch64 \
+        CROSS_COMPILE=aarch64-none-elf- \
+        CC=aarch64-none-elf-gcc; \
+    make -j10; \
+    make install"
 
 # Quick building for nfs
 alias mnfs="cd /host/sDDF/echo_server/libnfs/build; rm -rf *; cmake ..; make"
@@ -13,7 +25,7 @@ alias mnfs="cd /host/sDDF/echo_server/libnfs/build; rm -rf *; cmake ..; make"
 # Quick building everything
 alias m="mpy; mmusl; mfs; msddf"
 
-export PATH="/usr/local/musl/bin:$PATH"
+# export PATH="/usr/local/musl/bin:$PATH"   
 
 # Setup aarch64-none-elf
 export PATH="/host/extras/install-lnx/gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf/bin:$PATH"
