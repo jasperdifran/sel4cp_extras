@@ -16,7 +16,7 @@ alias mmusl="
         --target=aarch64 \
         CROSS_COMPILE=aarch64-none-elf- \
         CC=aarch64-none-elf-gcc; \
-    make -j10; \
+    make -j100; \
     make install"
 
 # Quick building for nfs
