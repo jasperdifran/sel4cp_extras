@@ -5,7 +5,7 @@ alias mpy="cd /host/sDDF/echo_server/micropython/ports/imx8mm-sel4cp/; make CROS
 alias msddf="cd /host/sDDF/echo_server/; make BUILD_DIR=./build SEL4CP_SDK=/host/sel4cp/release/sel4cp-sdk-1.2.6 SEL4CP_BOARD=imx8mm SEL4CP_CONFIG=debug -j5"
 
 # Quick building for musl
-alias mmusl="
+alias mcmusl="
     cd /host/sDDF/echo_server/musl; \
     rm -rf build lib obj; \
     ./configure \
@@ -18,6 +18,12 @@ alias mmusl="
         CC=aarch64-none-elf-gcc; \
     make -j100; \
     make install"
+
+alias mmusl="
+    cd /host/sDDF/echo_server/musl; \
+    make -j100; \
+    make install
+"
 
 # Quick building for nfs
 alias mnfs="cd /host/sDDF/echo_server/libnfs/build; rm -rf *; cmake ..; make"
