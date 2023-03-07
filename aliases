@@ -26,7 +26,8 @@ alias mmusl="
 "
 
 # Quick building for nfs
-alias mnfs="cd /host/sDDF/echo_server/libnfs/build; rm -rf *; cmake ..; make"
+alias mcnfs="cd /host/sDDF/echo_server/libnfs/build; rm -rf *; cmake ..; make"
+alias mnfs="cd /host/sDDF/echo_server/libnfs/build; make"
 
 # Quick building everything
 alias m="mpy; mmusl; mfs; msddf"
@@ -35,3 +36,5 @@ alias m="mpy; mmusl; mfs; msddf"
 
 # Setup aarch64-none-elf
 export PATH="/host/extras/install-lnx/gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf/bin:$PATH"
+
+alias rnfs="mnfs; msddf; rm -rf build; msddf"
