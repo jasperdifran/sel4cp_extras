@@ -37,4 +37,4 @@ alias m="mpy; mmusl; mfs; msddf"
 # Setup aarch64-none-elf
 export PATH="/host/extras/install-lnx/gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf/bin:$PATH"
 
-alias rnfs="mnfs; msddf; rm -rf build; msddf"
+alias rnfs="mnfs; msddf; rm build/nfs.elf; msddf"
