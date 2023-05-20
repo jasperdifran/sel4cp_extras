@@ -38,3 +38,7 @@ alias m="mpy; mmusl; mfs; msddf"
 export PATH="/host/extras/install-lnx/gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf/bin:$PATH"
 
 alias rnfs="mnfs; msddf; rm build/nfs.elf; msddf"
+
+alias mcp="cd /host/sel4cp; ./env/bin/python build_sdk.py --sel4='../seL4'"
+
+alias newmusl="make C_COMPILER=aarch64-none-elf-gcc TOOLPREFIX=aarch64-none-elf- CONFIG_ARCH_AARCH64=y STAGE_DIR=build SOURCE_DIR=/host/sDDF/echo_server/musllibc"
